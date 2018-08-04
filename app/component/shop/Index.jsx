@@ -1,7 +1,8 @@
 import React from 'react';
 import '../../pub/css/cmmon.pcss';
-import '../../pub/css/index.pcss';
-class Index extends React.Component{
+import '../../pub/css/shop.pcss';
+
+class Index extends React.Component {
     render(){
         return (
             <div className="cont">
@@ -10,13 +11,13 @@ class Index extends React.Component{
                     <div>
                         <i className="logo"/>
                     </div>
-                    <div className="nav">
-                        <a href="/index.html">首页</a>
-                        <a href="/shop.html">商城</a>
-                    </div>
+                   <div className="nav">
+                       <a href="/index.html">首页</a>
+                       <a href="/shop.html">商城</a>
+                   </div>
                 </div>
-                <div className="index">
-                    这是首页
+                <div className="shop">
+                    这是商城
                 </div>
                 <div className="bottom">
                     这是底部
@@ -25,4 +26,5 @@ class Index extends React.Component{
         );
     }
 }
+
 export default Index;
