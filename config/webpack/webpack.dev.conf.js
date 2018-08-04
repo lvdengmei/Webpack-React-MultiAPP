@@ -31,6 +31,15 @@ let config = merge(baseWebpackConfig,{
                     path.resolve(__dirname,"../../node_modules")
                 ]
             },
+            {
+                test:/\.(css|pcss)$/,
+                loader:'style-loader?sourceMap!css-loader?sourceMap!postcss-loader?sourceMap',
+                exclude:/node_modules/
+            },
+            {
+                test:/\.(png|jpg|gif|eot|woff|woff2|svg|swf)$/,
+                loader:'file-loader?name=[name].[ext]&outputPath='+webpackFile.resource+'/'
+            }
         ]
     },
     devServer:{
