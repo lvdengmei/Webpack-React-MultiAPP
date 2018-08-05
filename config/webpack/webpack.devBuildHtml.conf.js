@@ -12,10 +12,10 @@ fs.mkdirSync(webpackFile.devDirectory);
 //生成html
 let htmlCont = fs.readFileSync("index.html","utf8");
 let scriptInsert=`
-    <script type="text/javascript" src="src/manifest.js"/>
-    <script type="text/javascript" src="src/vendor.js"/>
-    <script type="text/javascript" src="src/common.js"/>
-    <script type="text/javascript" src="src/key.js"/>
+    <script type="text/javascript" src="js/manifest.js"></script>
+    <script type="text/javascript" src="js/vendor.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/key.js"></script>
 `;
 htmlCont = htmlCont.replace('</body>',scriptInsert+"</body>");
 entryBuild.map((data)=>{
