@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../pub/css/common.pcss";
+import "../../public/css/common.pcss";
 
 const Header = () =>
     <div className="top">

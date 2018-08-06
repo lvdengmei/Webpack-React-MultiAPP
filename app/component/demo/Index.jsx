@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../pub/css/demo.pcss";
+import "../../public/css/demo.pcss";
 class Index extends React.Component{
     render(){
 
