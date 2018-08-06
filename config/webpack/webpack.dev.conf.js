@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const path = require('path');
 const baseWebpackConfig = require('./webpack.base.conf');
 const webpackFile = require("./webpack.file.conf");
+const eslintFormatter = require('react-dev-utils/eslintFormatter');
 
 let config = merge(baseWebpackConfig,{
     mode:"development",
@@ -53,6 +54,32 @@ let config = merge(baseWebpackConfig,{
                 include:[
                     path.resolve(__dirname,"../../app"),
                     path.resolve(__dirname,"../../entryBuild")
+                ],
+                exclude:[
+                    path.resolve(__dirname,"../../node_modules")
+                ]
+            },
+            {
+                test:/\.(js|jsx)$/,
+                enforce:'pre',
+                use:[
+                    {
+                        options:{
+                            formatter:eslintFormatter,
+                            eslintPath:require.resolve('eslint'),
+                            // @remove-on-eject-begin
+                            baseConfig:{
+                                extends:[require.resolve('eslint-config-react-app')]
+                            },
+                            //ignore:false,
+                            useEslintrc:false
+                            // @remove-on-eject-end
+                        },
+                        loader:require.resolve('eslint-loader')
+                    }
+                ],
+                include:[
+                    path.resolve(__dirname,"../../app")
                 ],
                 exclude:[
                     path.resolve(__dirname,"../../node_modules")
